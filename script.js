@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const terminalContainer = document.getElementById('terminal-container');
     term.open(container); // Open the terminal in the container
 
-    const socket = io('https://pythonTterminal-production.up.railway.app');
+    const socket = io('https://pythontterminal-production.up.railway.app');
 
     let inputBuffer = ''; // To store user input
 
