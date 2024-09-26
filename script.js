@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const terminalContainer = document.getElementById('terminal-container');
     term.open(container); // Open the terminal in the container
 
-    const socket = io('http://127.0.0.1:5000'); // Connect to Flask backend
+    const socket = io('https://pythonTterminal-production.up.railway.app');
 
     let inputBuffer = ''; // To store user input
 
