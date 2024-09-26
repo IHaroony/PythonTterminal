@@ -1,0 +1,149 @@
+/* General body styling */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #edf1f5;  /* Light gradient background */
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Terminal Container */
+#terminal-container {
+    width: 100%;
+    height: 50vh;
+    max-width: 850px;
+    margin: 200px auto;
+    padding: 0;
+    background: linear-gradient(to bottom, #69e9f58e, #ffffff); /* Light gradient background */
+    border-radius: 15px;  /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column;
+    transform: scale(1); /* Default scale */
+    transition: transform 0.5s cubic-bezier(0.55, 0.8, 0.55, 1), 
+                box-shadow 0.5s cubic-bezier(0.55, 0.8, 0.55, 1); /* Smoother transition */
+}
+
+/* Expanded state on click */
+#terminal-container.expanded {
+    transform: scale(1.15); /* Scale up by 5% */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add a bit more shadow */
+}
+
+
+/* Window Controls (Minimize, Maximize, Close) */
+.window-controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    gap: 9px;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.minimize {
+    background-color: #f4c20d; /* Yellow */
+}
+
+.maximize {
+    background-color: #34a853; /* Green */
+}
+
+.close {
+    background-color: #ea4335; /* Red */
+}
+
+/* Tab Bar Styling */
+.tab-bar {
+    height: 35px;
+    background-color: #f1f3f4;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-bottom: 8px solid #e0e9eea4;
+    gap: 8px;
+}
+
+/* Tab Styling */
+.tab {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 13px 15px 0 0;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab:hover {
+    background-color: #f9f9f9;
+}
+
+.tab-title {
+    font-size: 14px;
+    color: #333;
+    margin-right: 8px;
+}
+
+.tab-close {
+    font-size: 12px;
+    font-weight: 700;
+    color: #888;
+    cursor: pointer;
+}
+
+.tab-close:hover {
+    color: #e00;
+}
+
+/* Active Tab */
+.active-tab {
+    background-color: #e8edf3;
+    box-shadow: none;
+}
+
+/* Plus Button Tab */
+.add-tab {
+    background-color: #f1f3f4;
+    border: 1px solid #ddd;
+    border-radius: 30%;
+    padding: 2.5px 9px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-tab:hover {
+    background-color: #e8e8e8;
+}
+
+.tab-plus {
+    font-size: 18px;
+    color: #2e2929;
+}
+
+/* Terminal Content Styling */
+#terminal {
+    flex-grow: 1; /* Ensures the terminal takes up remaining space */
+    font-family: 'Cascadia Code', 'Courier New', monospace;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    color: #333; /* Dark text color */
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 10px;
+    cursor: default; /* Default cursor when hovering */
+}
+
+#terminal:hover {
+    cursor: default; /* Ensure it's a regular cursor on hover */
+}

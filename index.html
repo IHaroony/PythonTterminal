@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Pure Python Terminal</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/xterm/css/xterm.css"> <!-- Xterm CSS -->
+</head>
+<body>
+    <!-- Terminal Container -->
+    <div id="terminal-container">
+        <!-- Top Bar with Minimize, Maximize, Close Buttons -->
+        <div class="window-controls">
+            <span class="control minimize"></span>
+            <span class="control maximize"></span>
+            <span class="control close"></span>
+        </div>
+
+        <!-- Tab Bar for single terminal tab -->
+        <div class="tab-bar">
+            <div class="tab active-tab">
+                <span class="tab-title">Haroon's Python Terminal</span>
+                <span class="tab-close">✕</span>
+            </div>
+            <!-- Plus button to simulate adding a new tab -->
+            <div class="tab add-tab">
+                <span class="tab-plus">+</span>
+            </div>
+        </div>
+
+        <!-- Terminal Content Area -->
+        <div id="terminal"></div>
+    </div>
+
+    <!-- Include the xterm.js and socket.io libraries -->
+    <script src="https://unpkg.com/xterm/lib/xterm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
