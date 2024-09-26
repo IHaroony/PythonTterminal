@@ -1,7 +1,8 @@
 from flask import Flask
-from flask_socketio import SocketIO, emit
+from flask_socketio import SocketIO
 import sys
 import io
+import os  # Add the os module to get environment variables
 
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*", async_mode='eventlet')  # Set async_mode to 'eventlet'
