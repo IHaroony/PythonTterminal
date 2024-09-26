@@ -54,6 +54,7 @@ def handle_user_input(user_data):
         result = execute_python_code()  # Resume execution
         emit('output', result)  # Send output to frontend
 
-# Start the Flask server
+# Update this part for production deployment
 if __name__ == '__main__':
-    socketio.run(app, debug=True)  # Use socketio.run to support WebSockets
+    port = int(os.environ.get("PORT", 5000))  # Get port from environment variable, fallback to 5000
+    socketio.run(app, host='0.0.0.0', port=port)  # Listen on all interfaces, use Railway's port

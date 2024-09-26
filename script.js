@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const socket = io('https://pythontterminal-production.up.railway.app');
+
+
     const term = new Terminal({
         cursorBlink: true,  // Make the cursor blink
         fontFamily: 'Cascadia Code, Courier New, monospace',
@@ -15,11 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const terminalContainer = document.getElementById('terminal-container');
     term.open(container); // Open the terminal in the container
 
-    // Fix typo in the backend URL and force WebSocket transport
-    const socket = io('https://pythontterminal-production.up.railway.app', {
-        transports: ['websocket'],  // Force WebSocket transport
-        upgrade: false
-    });
 
     let inputBuffer = ''; // To store user input
 
