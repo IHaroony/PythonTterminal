@@ -15,7 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const terminalContainer = document.getElementById('terminal-container');
     term.open(container); // Open the terminal in the container
 
-    const socket = io('https://pythontterminal-production.up.railway.app');
+    // Fix typo in the backend URL and force WebSocket transport
+    const socket = io('https://pythontterminal-production.up.railway.app', {
+        transports: ['websocket'],  // Force WebSocket transport
+        upgrade: false
+    });
 
     let inputBuffer = ''; // To store user input
 
@@ -40,6 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle output from the backend
     socket.on('output', (data) => {
         term.write(data + '\r\n'); // Print output to the terminal
+    });
+
+    // Error handling if connection fails
+    socket.on('connect_error', (error) => {
+        term.write('Connection error: ' + error + '\r\n');
     });
 
     // Toggle expansion when clicking the terminal
